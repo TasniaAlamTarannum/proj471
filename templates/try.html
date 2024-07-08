@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+        <title> {% block title %} {% endblock title %} - MyTodo</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FOOD DONATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">About us</a>
+             
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Events</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <main>
+        <section class="hero">
+            <h1>Flask Website Waste food management</h1>
+            <p>Get youself in our community</p>
+            <button>Explore Events</button>
+        </section>
+        <section class="projects">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>
+                    <img src="project1.png" alt="Event 1">
+                    <h3>Event 1</h3>
+                    <p>DHAKA.</p>
+                </li>
+                <li>
+                    <img src="project2.png" alt="Event 2">
+                    <h3>Event 2</h3>
+                    <p>RAJSHAHI.</p>
+                </li>
+                <li>
+                    <img src="project3.png" alt="Event 3">
+                    <h3>Event 3</h3>
+                    <p>Sylhet.</p>
+                </li>
+            </ul>
+        </section>
+        <section class="call-to-action">
+            <h2>Donate Food Today!</h2>
+            <p>Help people by saving food.</p>
+            
+            <a href="login.html">
+                <button>Login</button>
+              </a>
+            <a href="login.html">
+                <button>Sign up !</button>
+              </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 donate</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
