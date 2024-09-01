@@ -1,109 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Registration Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .form-group button:hover {
-            background-color: #0056b3;
-        }
-        .toggle-link {
-            display: block;
-            margin-top: 10px;
-            text-align: center;
-            cursor: pointer;
-            color: #007bff;
-        }
-    </style>
+    <title>Login</title>
 </head>
+
 <body>
-    <div class="container">
-        <div id="login-form" class="form-group">
-            <h2>Login</h2>
-            <label for="login-email">Email</label>
-            <input type="email" id="login-email" required>
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" required>
-            <button onclick="login()">Login</button>
-            <div class="toggle-link" onclick="toggleForms()">Don't have an account? Register</div>
-        </div>
-        <div id="register-form" class="form-group" style="display: none;">
-            <h2>Register</h2>
-            <label for="register-email">Email</label>
-            <input type="email" id="register-email" required>
-            <label for="register-password">Password</label>
-            <input type="password" id="register-password" required>
-            <button onclick="register()">Register</button>
-            <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
-        </div>
-    </div>
+    <h1>Login Page</h1>
 
-    <script>
-        function toggleForms() {
-            const loginForm = document.getElementById('login-form');
-            const registerForm = document.getElementById('register-form');
-            if (loginForm.style.display === 'none') {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-            } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
-            }
-        }
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
 
-        function login() {
-            const email = document.getElementById('login-email').value;
-            const password = document.getElementById('login-password').value;
-            // Implement login functionality here
-            alert(`Logging in with email: ${email}`);
-        }
-
-        function register() {
-            const email = document.getElementById('register-email').value;
-            const password = document.getElementById('register-password').value;
-            // Implement registration functionality here
-            alert(`Registering with email: ${email}`);
-        }
-    </script>
+    <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a>
 </body>
+
 </html>
